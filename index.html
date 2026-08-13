@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Regex Tester & Visual Match Engine | Zero-Login Free Tool</title>
+  <meta name="description" content="Test, debug, and visualize Regular Expressions (Regex) in real time. Highlight pattern matches, test string replacements, and access a cheat sheet for emails, URLs, IPs, and dates.">
+  <meta name="keywords" content="regex tester, regular expression debugger, regex match highlighter, regex replace tool, javascript regex cheat sheet, online regex visualizer">
+  <link rel="canonical" href="https://regextester.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://regextester.app/">
+  <meta property="og:title" content="Real-Time Regex Tester & Match Engine">
+  <meta property="og:description" content="Test regular expressions instantly in your browser with visual match highlighting and string replacement options.">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Regex Tester & Visual Match Engine",
+    "url": "https://regextester.app/",
+    "description": "Zero-login developer utility for building, testing, and visualizing JavaScript Regular Expressions.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="icon">⚡</span>
+      <span class="title">Regex Forge</span>
+    </div>
+    <div class="badge">Real-Time Client Engine</div>
+  </header>
+
+  <main class="container">
+    <header class="hero">
+      <h1>Real-Time Regex Tester & Match Visualizer</h1>
+      <p>Construct, evaluate, and highlight Regular Expression patterns instantly. Test capture groups, substitution strings, and reference preset cheat sheets.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Input Panel -->
+      <section class="card glass-panel">
+        <h2><span class="step-num">1</span> Expression & Flags</h2>
+
+        <div class="form-group">
+          <label for="regexPattern">Regular Expression Pattern</label>
+          <div class="input-wrapper">
+            <span class="prefix">/</span>
+            <input type="text" id="regexPattern" value="([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})" placeholder="e.g. [a-z]+">
+            <span class="suffix">/</span>
+          </div>
+        </div>
+
+        <div class="flags-row">
+          <label class="flag-toggle"><input type="checkbox" id="flagG" checked> <code>g</code> (Global)</label>
+          <label class="flag-toggle"><input type="checkbox" id="flagI" checked> <code>i</code> (Case Insensitive)</label>
+          <label class="flag-toggle"><input type="checkbox" id="flagM"> <code>m</code> (Multiline)</label>
+          <label class="flag-toggle"><input type="checkbox" id="flagS"> <code>s</code> (Dotall)</label>
+          <label class="flag-toggle"><input type="checkbox" id="flagU"> <code>u</code> (Unicode)</label>
+        </div>
+
+        <div class="form-group margin-top">
+          <label for="presetSelect">⚡ Load Common Pattern Presets</label>
+          <select id="presetSelect">
+            <option value="" disabled selected>-- Select a Preset Pattern --</option>
+            <option value="email">Email Address</option>
+            <option value="url">Web URL (HTTP/HTTPS)</option>
+            <option value="ipv4">IPv4 Address</option>
+            <option value="phone">US Phone Number</option>
+            <option value="date">Date (YYYY-MM-DD)</option>
+            <option value="hex">HEX Color Code</option>
+          </select>
+        </div>
+
+        <h2><span class="step-num">2</span> Test String & Replace</h2>
+        <div class="form-group">
+          <label for="testText">Test Input Text</label>
+          <textarea id="testText" rows="6" placeholder="Paste target text here to evaluate matches..."></textarea>
+        </div>
+
+        <div class="form-group margin-top">
+          <label for="replacePattern">Substitution String (Optional)</label>
+          <input type="text" id="replacePattern" value="[EMAIL: $1 at $2]" placeholder="e.g. REPLACED or $1">
+        </div>
+      </section>
+
+      <!-- Output / Results Panel -->
+      <section class="card glass-panel results-section">
+        <h2>Match Results & Highlights</h2>
+
+        <div class="stats-banner">
+          <div class="stat-item">
+            <span>Matches Found:</span>
+            <strong id="matchCount">0</strong>
+          </div>
+          <div class="stat-item">
+            <span>Execution Time:</span>
+            <strong id="execTime">0.0 ms</strong>
+          </div>
+          <div class="stat-item">
+            <span>Status:</span>
+            <strong id="regexStatus" class="highlight-green">Valid Regex</strong>
+          </div>
+        </div>
+
+        <!-- Visual Highlight Box -->
+        <div class="form-group margin-top">
+          <label>Visual Match Highlights</label>
+          <div id="highlightContainer" class="highlight-box-display">
+            <span class="placeholder-text">Highlighted matches will appear here...</span>
+          </div>
+        </div>
+
+        <!-- Replacement Result Box -->
+        <div class="form-group margin-top">
+          <label for="replaceOutput">Substitution Result Output</label>
+          <textarea id="replaceOutput" readonly rows="4" placeholder="Replacement results will appear here..."></textarea>
+        </div>
+
+        <!-- Capture Group Breakdown -->
+        <div class="form-group margin-top">
+          <label>Capture Groups Breakdown</label>
+          <div id="groupsContainer" class="groups-list">
+            <!-- Group cards generated here -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SEO Informational Article Section -->
+    <article class="card glass-panel seo-content">
+      <h2>Mastering Regular Expressions for Web Development</h2>
+      <p>Regular expressions (Regex) are powerful text processing engines used for data validation, string parsing, search-and-replace, and web scraping. Understanding essential quantifier symbols and character classes enables robust frontend and backend logic.</p>
+
+      <h3>Common Character Classes Cheat Sheet</h3>
+      <ul>
+        <li><code>\d</code> - Matches any digit character (equivalent to <code>[0-9]</code>).</li>
+        <li><code>\w</code> - Matches any word character (letters, numbers, underscore).</li>
+        <li><code>\s</code> - Matches any whitespace character (space, tab, newline).</li>
+        <li><code>+</code> - Matches 1 or more occurrences of the preceding token.</li>
+        <li><code>*</code> - Matches 0 or more occurrences of the preceding token.</li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Regex Forge. Free & Open-Source Developer Engine.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
