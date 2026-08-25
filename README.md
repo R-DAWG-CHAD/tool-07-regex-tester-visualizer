@@ -1,8 +1,16 @@
 # ⚡ Real-Time Regex Tester & Visual Match Engine
 
+> 🚀 **Live Web App:** [https://tool-07-regex-tester-visualizer.vercel.app](https://tool-07-regex-tester-visualizer.vercel.app)
+
+
+
 An interactive, browser-based Regular Expression (Regex) debugger, match highlighter, capture group inspector, and pattern replacement engine.
 
 ## 🚀 Key Features
+
+> 🚀 **Live Web App:** [https://tool-07-regex-tester-visualizer.vercel.app](https://tool-07-regex-tester-visualizer.vercel.app)
+
+
 
 - **Real-Time Match Highlighting:** Visually highlights all regex matches directly within the test input text container.
 - **Capture Group Inspector:** Breaks down matched groups (`$1`, `$2`, etc.) in structured card displays.
@@ -15,4 +23,9 @@ An interactive, browser-based Regular Expression (Regex) debugger, match highlig
 
 ## 📄 License
 
+> 🚀 **Live Web App:** [https://tool-07-regex-tester-visualizer.vercel.app](https://tool-07-regex-tester-visualizer.vercel.app)
+
+
+
 MIT License. Free and open-source.
+
